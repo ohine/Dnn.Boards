@@ -1,0 +1,682 @@
+﻿
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}Boards_Board_Create') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}Boards_Board_Create
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}Boards_Board_Get') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}Boards_Board_Get
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}Boards_Board_GetGroup') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}Boards_Board_GetGroup
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}Boards_Board_GetModule') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}Boards_Board_GetModule
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}Boards_Board_GetUser') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}Boards_Board_GetUser
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}Boards_Board_Update') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}Boards_Board_Update
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}Boards_Board_Delete') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}Boards_Board_Delete
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}Boards_Board_List_Create') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}Boards_Board_List_Create
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}Boards_Board_List_Get') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}Boards_Board_List_Get
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}Boards_Board_List_GetBoard') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}Boards_Board_List_GetBoard
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}Boards_Board_List_Update') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}Boards_Board_List_Update
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}Boards_Board_List_Delete') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}Boards_Board_List_Delete
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}Boards_Card_Create') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}Boards_Card_Create
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}Boards_Card_Get') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}Boards_Card_Get
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}Boards_Card_GetList') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}Boards_Card_GetList
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}Boards_Card_GetBoard') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}Boards_Card_GetBoard
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}Boards_Card_Update') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}Boards_Card_Update
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}Boards_Card_Delete') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}Boards_Card_Delete
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}Boards_Card_Item_Create') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}Boards_Card_Item_Create
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}Boards_Card_Item_Get') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}Boards_Card_Item_Get
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}Boards_Card_Item_GetCard') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}Boards_Card_Item_GetCard
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}Boards_Card_Item_Update') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}Boards_Card_Item_Update
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}Boards_Card_Item_Delete') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}Boards_Card_Item_Delete
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'FK_{objectQualifier}Boards_Card_Item_{objectQualifier}Boards_Card') and OBJECTPROPERTY(id, N'IsConstraint') = 1)
+	ALTER TABLE {databaseOwner}{objectQualifier}Boards_Card_Item DROP CONSTRAINT FK_{objectQualifier}Boards_Card_Item_{objectQualifier}Boards_Card
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}Boards_Card_Item') and OBJECTPROPERTY(id, N'IsTable') = 1)
+	DROP TABLE {databaseOwner}{objectQualifier}Boards_Card_Item
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'FK_{objectQualifier}Boards_Card_{objectQualifier}Boards_Board_List') and OBJECTPROPERTY(id, N'IsConstraint') = 1)
+	ALTER TABLE {databaseOwner}{objectQualifier}Boards_Card DROP CONSTRAINT FK_{objectQualifier}Boards_Card_{objectQualifier}Boards_Board_List
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}Boards_Card') and OBJECTPROPERTY(id, N'IsTable') = 1)
+	DROP TABLE {databaseOwner}{objectQualifier}Boards_Card
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'FK_{objectQualifier}Boards_Board_List_{objectQualifier}Boards_Board') and OBJECTPROPERTY(id, N'IsConstraint') = 1)
+	ALTER TABLE {databaseOwner}{objectQualifier}Boards_Board_List DROP CONSTRAINT FK_{objectQualifier}Boards_Board_List_{objectQualifier}Boards_Board
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}Boards_Board_List') and OBJECTPROPERTY(id, N'IsTable') = 1)
+	DROP TABLE {databaseOwner}{objectQualifier}Boards_Board_List
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'FK_{objectQualifier}Boards_Board_{objectQualifier}Portals') and OBJECTPROPERTY(id, N'IsConstraint') = 1)
+	ALTER TABLE {databaseOwner}{objectQualifier}Boards_Board DROP CONSTRAINT FK_{objectQualifier}Boards_Board_{objectQualifier}Portals
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'FK_{objectQualifier}Boards_Board_{objectQualifier}Modules') and OBJECTPROPERTY(id, N'IsConstraint') = 1)
+	ALTER TABLE {databaseOwner}{objectQualifier}Boards_Board DROP CONSTRAINT FK_{objectQualifier}Boards_Board_{objectQualifier}Modules
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}Boards_Board') and OBJECTPROPERTY(id, N'IsTable') = 1)
+	DROP TABLE {databaseOwner}{objectQualifier}Boards_Board
+GO
+
+CREATE TABLE {databaseOwner}[{objectQualifier}Boards_Board]
+(
+	[BoardId] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](100) NOT NULL,
+	[Description] [nvarchar](max) NULL,
+	[PortalId] [int] NOT NULL,
+	[OrganizerId] [int] NOT NULL,
+	[GroupId] [int] NULL,
+	[ModuleId] [int] NOT NULL,
+	[CreatedByUserId] [int] NOT NULL,
+	[CreatedOnDate] [datetime] NOT NULL,
+	[LastModifiedByUserId] [int] NULL,
+	[LastModifiedOnDate] [datetime] NULL
+)
+GO
+
+ALTER TABLE {databaseOwner}{objectQualifier}Boards_Board
+		WITH NOCHECK
+ADD CONSTRAINT PK_{objectQualifier}Boards_Board PRIMARY KEY CLUSTERED ( [BoardId] )
+GO
+
+ALTER TABLE {databaseOwner}{objectQualifier}Boards_Board
+ADD CONSTRAINT FK_{objectQualifier}Boards_Board_{objectQualifier}Portals FOREIGN KEY ( [PortalId] ) REFERENCES {databaseOwner}{objectQualifier}Portals ( [PortalID] ) ON DELETE CASCADE
+		ON UPDATE CASCADE
+GO
+
+ALTER TABLE {databaseOwner}{objectQualifier}Boards_Board
+ADD CONSTRAINT FK_{objectQualifier}Boards_Board_{objectQualifier}Modules FOREIGN KEY ( [ModuleId] ) REFERENCES {databaseOwner}{objectQualifier}Modules ( [ModuleID] ) ON DELETE CASCADE
+		ON UPDATE CASCADE
+GO
+
+CREATE TABLE {databaseOwner}[{objectQualifier}Boards_Board_List]
+(
+	[BoardListId] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](50) NOT NULL,
+	[BoardId] [int] NOT NULL,
+	[Archived] [bit] NOT NULL,
+	[SortOrder] [int] NOT NULL
+)
+GO
+
+ALTER TABLE {databaseOwner}{objectQualifier}Boards_Board_List
+		WITH NOCHECK
+ADD CONSTRAINT PK_{objectQualifier}Boards_Board_List PRIMARY KEY CLUSTERED ( [BoardListId] )
+GO
+
+ALTER TABLE {databaseOwner}{objectQualifier}Boards_Board_List
+ADD CONSTRAINT FK_{objectQualifier}Boards_Board_List_{objectQualifier}Boards_Board FOREIGN KEY ( [BoardId] ) REFERENCES {databaseOwner}{objectQualifier}Boards_Board ( [BoardId] ) ON DELETE CASCADE
+		ON UPDATE CASCADE
+GO
+
+CREATE TABLE {databaseOwner}[{objectQualifier}Boards_Card]
+(
+	[CardId] [int] IDENTITY(1,1) NOT NULL,
+	[ContentItemId] [int] NOT NULL,
+	[Archived] [bit] NOT NULL,
+	[DueDate] [datetime] NULL,
+	[BoardListId] [int] NOT NULL,
+	[SortOrder] [int] NOT NULL,
+	[Comments] [int] NOT NULL,
+	[OpenItems] [int] NOT NULL,
+	[CompletedItems] [int] NOT NULL,
+	[Labels] [nvarchar](50) NULL,
+	[Members] [nvarchar](50) NULL
+)
+GO
+
+ALTER TABLE {databaseOwner}{objectQualifier}Boards_Card
+		WITH NOCHECK
+ADD CONSTRAINT PK_{objectQualifier}Boards_Card PRIMARY KEY CLUSTERED ( [CardId] )
+GO
+
+ALTER TABLE {databaseOwner}{objectQualifier}Boards_Card
+ADD CONSTRAINT FK_{objectQualifier}Boards_Card_{objectQualifier}Boards_Board_List FOREIGN KEY ( [BoardListId] ) REFERENCES {databaseOwner}{objectQualifier}Boards_Board_List ( [BoardListId] ) ON DELETE CASCADE
+		ON UPDATE CASCADE
+GO
+
+CREATE TABLE {databaseOwner}[{objectQualifier}Boards_Card_Item]
+(
+	[CardItemId] [int] IDENTITY(1,1) NOT NULL,
+	[CardId] [int] NOT NULL,
+	[Item] [nvarchar](150) NOT NULL,
+	[ItemGroup] [nvarchar](50) NOT NULL,
+	[Completed] [bit] NOT NULL,
+	[SortOrder] [int] NOT NULL,
+	[Archived] [bit] NOT NULL
+)
+GO
+
+ALTER TABLE {databaseOwner}{objectQualifier}Boards_Card_Item
+		WITH NOCHECK
+ADD CONSTRAINT PK_{objectQualifier}Boards_Card_Item PRIMARY KEY CLUSTERED ( [CardItemId] )
+GO
+
+ALTER TABLE {databaseOwner}{objectQualifier}Boards_Card_Item
+ADD CONSTRAINT FK_{objectQualifier}Boards_Card_Item_{objectQualifier}Boards_Card FOREIGN KEY ( [CardId] ) REFERENCES {databaseOwner}{objectQualifier}Boards_Card ( [CardId] ) ON DELETE CASCADE
+		ON UPDATE CASCADE
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Boards_Board_Create]
+	@Name NVARCHAR(100) ,
+	@Description NVARCHAR(MAX) ,
+	@PortalId INT ,
+	@OrganizerId INT ,
+	@GroupId INT ,
+	@ModuleId INT ,
+	@CreatedByUserId INT
+AS 
+	DECLARE @CreatedOnDate DATETIME
+	SET @CreatedOnDate = GETUTCDATE()
+
+	INSERT  {databaseOwner}{objectQualifier}Boards_Board
+			( Name ,
+			  [Description] ,
+			  PortalId ,
+			  OrganizerId ,
+			  GroupId ,
+			  ModuleId ,
+			  CreatedByUserId ,
+			  CreatedOnDate
+			)
+	VALUES  ( @Name ,
+			  @Description ,
+			  @PortalId ,
+			  @OrganizerId ,
+			  @GroupId ,
+			  @ModuleId ,
+			  @CreatedByUserId ,
+			  @CreatedOnDate
+			)
+	SELECT  SCOPE_IDENTITY()
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Boards_Board_Get] @BoardId INT
+AS 
+	SELECT  *
+	FROM    {databaseOwner}{objectQualifier}Boards_Board
+	WHERE   BoardId = @BoardId
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Boards_Board_GetGroup] @GroupId INT
+AS 
+	SELECT  *
+	FROM    {databaseOwner}{objectQualifier}Boards_Board
+	WHERE   GroupId = @GroupId
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Boards_Board_GetModule] @ModuleId INT
+AS 
+	SELECT  *
+	FROM    {databaseOwner}{objectQualifier}Boards_Board
+	WHERE   ModuleId = @ModuleId
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Boards_Board_GetUser]
+	@UserId INT ,
+	@PortalId INT
+AS 
+	SELECT  *
+	FROM    {databaseOwner}{objectQualifier}Boards_Board
+	WHERE   OrganizerId = @UserId
+			AND PortalId = @PortalId
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Boards_Board_Update]
+	@BoardId INT ,
+	@Name NVARCHAR(100) ,
+	@Description NVARCHAR(MAX) ,
+	@PortalId INT ,
+	@OrganizerId INT ,
+	@GroupId INT ,
+	@ModuleId INT ,
+	@LastModifiedByUserId INT ,
+	@LastModifiedOnDate DATETIME
+AS 
+	UPDATE  {databaseOwner}{objectQualifier}Boards_Board
+	SET     Name = @Name ,
+			[Description] = @Description ,
+			PortalId = @PortalId ,
+			OrganizerId = @OrganizerId ,
+			GroupId = @GroupId ,
+			ModuleId = @ModuleId ,
+			LastModifiedByUserId = @LastModifiedByUserId ,
+			LastModifiedOnDate = @LastModifiedOnDate
+	WHERE   BoardId = @BoardId
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Boards_Board_Delete]
+	@BoardId INT ,
+	@PortalId INT
+AS 
+	DELETE  {databaseOwner}{objectQualifier}Boards_Board
+	WHERE   BoardId = @BoardId
+			AND PortalId = @PortalId
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Boards_Board_List_Create]
+	@Name NVARCHAR(50) ,
+	@BoardId INT
+AS 
+	DECLARE @SortOrder INT
+	SET @SortOrder = ( SELECT   COUNT(BoardListId)
+					   FROM     {databaseOwner}{objectQualifier}Boards_Board_List
+					   WHERE    BoardId = @BoardId
+								AND Archived = 0
+							  )
+	INSERT  {databaseOwner}{objectQualifier}Boards_Board_List
+			( Name, BoardId, Archived, SortOrder )
+	VALUES  ( @Name, @BoardId, 0, @SortOrder )
+	SELECT  SCOPE_IDENTITY()
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Boards_Board_List_Get] @BoardListId INT
+AS 
+	SELECT  *
+	FROM    {databaseOwner}{objectQualifier}Boards_Board_List
+	WHERE   BoardListId = @BoardListId
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Boards_Board_List_GetBoard] @BoardId INT
+AS 
+	SELECT  *
+	FROM    {databaseOwner}{objectQualifier}Boards_Board_List
+	WHERE   BoardId = @BoardId
+			AND Archived = 0
+	ORDER BY SortOrder ASC
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Boards_Board_List_Update]
+	@BoardListId INT ,
+	@Name NVARCHAR(50) ,
+	@BoardId INT ,
+	@Archived BIT ,
+	@SortOrder INT
+AS 
+	UPDATE  {databaseOwner}{objectQualifier}Boards_Board_List
+	SET     Name = @Name ,
+			Archived = @Archived ,
+			SortOrder = @SortOrder
+	WHERE   BoardListId = @BoardListId
+			AND BoardId = @BoardId
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Boards_Board_List_Delete]
+	@BoardListId INT ,
+	@BoardId INT
+AS 
+	DELETE  {databaseOwner}{objectQualifier}Boards_Board_List
+	WHERE   BoardListId = @BoardListId
+			AND BoardId = @BoardId
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Boards_Card_Create]
+	@ContentItemId INT ,
+	@DueDate DATETIME ,
+	@BoardListId INT ,
+	@Labels NVARCHAR(50) ,
+	@Members NVARCHAR(50)
+AS 
+	DECLARE @SortOrder INT
+	SET @SortOrder = ( SELECT   COUNT(CardId)
+					   FROM     {databaseOwner}{objectQualifier}Boards_Card
+					   WHERE    BoardListId = @BoardListId
+								AND Archived = 0
+					 )
+	INSERT  {databaseOwner}{objectQualifier}Boards_Card
+			( ContentItemId ,
+			  Archived ,
+			  DueDate ,
+			  BoardListId ,
+			  SortOrder ,
+			  Comments ,
+			  OpenItems ,
+			  CompletedItems ,
+			  Labels ,
+			  Members
+			)
+	VALUES  ( @ContentItemId ,
+			  0 ,
+			  @DueDate ,
+			  @BoardListId ,
+			  @SortOrder ,
+			  0 ,
+			  0 ,
+			  0 ,
+			  @Labels ,
+			  @Members
+			)    
+	SELECT  SCOPE_IDENTITY()
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Boards_Card_Get] @CardId INT
+AS 
+	SELECT  C.* ,
+			CI.Content ,
+			CI.ContentTypeID ,
+			CI.TabID ,
+			CI.ModuleID ,
+			CI.ContentKey ,
+			CI.Indexed ,
+			CI.CreatedByUserID ,
+			CI.CreatedOnDate ,
+			CI.LastModifiedByUserID ,
+			CI.LastModifiedOnDate ,
+			( SELECT    MetaDataValue
+			  FROM      {databaseOwner}{objectQualifier}ContentItems_MetaData
+			  WHERE     MetaDataID = 1
+						AND ContentItemID = CI.ContentItemID
+			) AS Title
+	FROM    {databaseOwner}{objectQualifier}Boards_Card C
+			INNER JOIN {databaseOwner}{objectQualifier}ContentItems CI ON C.ContentItemId = CI.ContentItemID
+	WHERE   CardId = @CardId
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Boards_Card_GetBoard] @BoardId INT
+AS 
+	SELECT  C.* ,
+			CI.Content ,
+			CI.ContentTypeID ,
+			CI.TabID ,
+			CI.ModuleID ,
+			CI.ContentKey ,
+			CI.Indexed ,
+			CI.CreatedByUserID ,
+			CI.CreatedOnDate ,
+			CI.LastModifiedByUserID ,
+			CI.LastModifiedOnDate ,
+			( SELECT    MetaDataValue
+			  FROM      {databaseOwner}{objectQualifier}ContentItems_MetaData
+			  WHERE     MetaDataID = 1
+						AND ContentItemID = CI.ContentItemID
+			) AS Title
+	FROM    {databaseOwner}{objectQualifier}Boards_Card C
+			INNER JOIN {databaseOwner}{objectQualifier}Boards_Board_List L ON C.BoardListId = L.BoardListId
+			INNER JOIN {databaseOwner}{objectQualifier}ContentItems CI ON C.ContentItemId = CI.ContentItemID
+	WHERE   L.BoardId = @BoardId
+			AND C.Archived = 0
+	ORDER BY SortOrder ASC
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Boards_Card_GetList] @BoardListId INT
+AS 
+	SELECT  C.* ,
+			CI.Content ,
+			CI.ContentTypeID ,
+			CI.TabID ,
+			CI.ModuleID ,
+			CI.ContentKey ,
+			CI.Indexed ,
+			CI.CreatedByUserID ,
+			CI.CreatedOnDate ,
+			CI.LastModifiedByUserID ,
+			CI.LastModifiedOnDate ,
+			( SELECT    MetaDataValue
+			  FROM      {databaseOwner}{objectQualifier}ContentItems_MetaData
+			  WHERE     MetaDataID = 1
+						AND ContentItemID = CI.ContentItemID
+			) AS Title
+	FROM    {databaseOwner}{objectQualifier}Boards_Card C
+			INNER JOIN {databaseOwner}{objectQualifier}ContentItems CI ON C.ContentItemId = CI.ContentItemID
+	WHERE   BoardListId = @BoardListId
+			AND C.Archived = 0
+	ORDER BY SortOrder ASC
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Boards_Card_Update]
+	@CardId INT ,
+	@ContentItemId INT ,
+	@Archived BIT ,
+	@DueDate DATETIME ,
+	@BoardListId INT ,
+	@SortOrder INT ,
+	@Labels NVARCHAR(50) ,
+	@Members NVARCHAR(50)
+AS 
+    DECLARE @OldSortOrder INT
+    SET @OldSortOrder = ( SELECT    SortOrder
+                          FROM      {databaseOwner}{objectQualifier}Boards_Card
+                          WHERE     CardId = @CardId
+                        )
+	
+    DECLARE @OldBoardListId INT
+    SET @OldBoardListId = ( SELECT  BoardListId
+                            FROM    {databaseOwner}{objectQualifier}Boards_Card
+                            WHERE   CardId = @CardId
+                          )
+	
+    UPDATE  {databaseOwner}{objectQualifier}Boards_Card
+    SET     ContentItemId = @ContentItemId ,
+            Archived = @Archived ,
+            DueDate = @DueDate ,
+            BoardListId = @BoardListId ,
+            SortOrder = @SortOrder ,
+            Comments = 0 ,
+            OpenItems = ( SELECT    COUNT(CardId)
+                          FROM      {databaseOwner}{objectQualifier}Boards_Card_Item
+                          WHERE     CardId = @CardId
+                                    AND Completed = 0
+                                    AND Archived = 0
+                        ) ,
+            CompletedItems = ( SELECT   COUNT(CardId)
+                               FROM     {databaseOwner}{objectQualifier}Boards_Card_Item
+                               WHERE    CardId = @CardId
+                                        AND Completed = 1
+                                        AND Archived = 0
+                             ) ,
+            Labels = @Labels ,
+            Members = @Members
+    WHERE   CardId = @CardId
+    
+    IF @BoardListId != @OldBoardListId 
+        BEGIN
+            UPDATE  {databaseOwner}{objectQualifier}Boards_Card
+            SET     SortOrder = SortOrder - 1
+            WHERE   SortOrder > @OldSortOrder
+                    AND BoardListId = @OldBoardListId
+                    AND Archived = 0
+                    
+            UPDATE  {databaseOwner}{objectQualifier}Boards_Card
+            SET     SortOrder = SortOrder + 1
+            WHERE   SortOrder >= @SortOrder
+                    AND BoardListId = @BoardListId
+                    AND Archived = 0
+                    AND CardId != @CardId
+        END
+    ELSE 
+        BEGIN
+            IF @SortOrder != @OldSortOrder 
+                BEGIN
+                    IF @SortOrder > @OldSortOrder 
+                        BEGIN
+                            UPDATE  {databaseOwner}{objectQualifier}Boards_Card
+                            SET     SortOrder = SortOrder - 1
+                            WHERE   SortOrder > @OldSortOrder
+                                    AND SortOrder <= @SortOrder
+                                    AND BoardListId = @BoardListId
+                                    AND Archived = 0
+                                    AND CardId != @CardId
+                        END
+                    ELSE 
+                        BEGIN
+                            UPDATE  {databaseOwner}{objectQualifier}Boards_Card
+                            SET     SortOrder = SortOrder + 1
+                            WHERE   SortOrder < @OldSortOrder
+                                    AND SortOrder >= @SortOrder
+                                    AND BoardListId = @BoardListId
+                                    AND Archived = 0
+                                    AND CardId != @CardId
+                        END
+                END
+        END
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Boards_Card_Delete]
+	@CardId INT ,
+	@BoardListId INT
+AS 
+	DECLARE @Archived BIT
+	SET @Archived = ( SELECT    Archived
+					  FROM      {databaseOwner}{objectQualifier}Boards_Card
+					  WHERE     CardId = @CardId
+					)
+	
+	IF @Archived != 1 
+		BEGIN
+			DECLARE @TempSortOrder INT
+			SET @TempSortOrder = ( SELECT   SortOrder
+								   FROM     {databaseOwner}{objectQualifier}Boards_Card
+								   WHERE    CardId = @CardId
+								 )
+			UPDATE  {databaseOwner}{objectQualifier}Boards_Card
+			SET     SortOrder = ( SortOrder - 1 )
+			WHERE   SortOrder > @TempSortOrder
+					AND BoardListId = @BoardListId
+		END
+	DELETE  {databaseOwner}{objectQualifier}Boards_Card
+	WHERE   CardId = @CardId
+			AND BoardListId = @BoardListId
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Boards_Card_Item_Create]
+	@CardId INT ,
+	@Item NVARCHAR(150) ,
+	@ItemGroup NVARCHAR(50)
+AS 
+	DECLARE @SortOrder INT
+	SET @SortOrder = ( SELECT   COUNT(CardItemId)
+					   FROM     {databaseOwner}{objectQualifier}Boards_Card_Item
+					   WHERE    CardId = @CardId
+								AND Archived = 0
+								AND ItemGroup = @ItemGroup
+					 )
+	INSERT  {databaseOwner}{objectQualifier}Boards_Card_Item
+			( CardId ,
+			  Item ,
+			  ItemGroup ,
+			  Completed ,
+			  SortOrder ,
+			  Archived
+			)
+	VALUES  ( @CardId ,
+			  @Item ,
+			  @ItemGroup ,
+			  0 ,
+			  @SortOrder ,
+			  0  
+			)
+	SELECT  SCOPE_IDENTITY()
+GO
+
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Boards_Card_Item_Get] @CardItemId INT
+AS 
+	SELECT  *
+	FROM    {databaseOwner}{objectQualifier}Boards_Card_Item
+	WHERE   CardItemId = @CardItemId
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Boards_Card_Item_GetCard] @CardId INT
+AS 
+	SELECT  *
+	FROM    {databaseOwner}{objectQualifier}Boards_Card_Item
+	WHERE   CardId = @CardId
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Boards_Card_Item_Update]
+	@CardItemId INT ,
+	@CardId INT ,
+	@Item NVARCHAR(150) ,
+	@ItemGroup NVARCHAR(50) ,
+	@Completed BIT ,
+	@SortOrder INT ,
+	@Archived BIT
+AS 
+	UPDATE  {databaseOwner}{objectQualifier}Boards_Card_Item
+	SET     CardId = @CardId ,
+			Item = @Item ,
+			ItemGroup = @ItemGroup ,
+			Completed = @Completed ,
+			@SortOrder = @SortOrder ,
+			Archived = @Archived
+	WHERE   CardItemId = @CardItemId
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Boards_Card_Item_Delete]
+	@CardItemId INT ,
+	@CardId INT
+AS 
+	DELETE  {databaseOwner}{objectQualifier}Boards_Card_Item
+	WHERE   CardItemId = @CardItemId
+			AND CardId = @CardId
+GO

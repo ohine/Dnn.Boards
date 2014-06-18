@@ -1,0 +1,145 @@
+
+
+.myBoard{
+	width:96%;
+	padding:2%;
+}
+
+.list {
+	float: left;
+	margin: 6px; padding: 15px;
+	background: #eee;
+	border-radius: 3px;
+	box-shadow: 0px 0px 3px #999, inset 0px 1px 0px #fff;
+	text-align: left;
+}
+.list h3{
+	font-size:20px;
+	color:#555;
+	text-shadow:0px 1px 0px #fff;
+}
+
+.cards {
+	width: 250px;
+	min-height: 20px;
+}
+
+.card {
+	width: 94%; min-height: 50px;
+	margin-bottom: 6px;
+	padding:6px;
+	border:1px solid #ccc;
+	border-bottom:1px solid #aaa;
+	border-right:1px solid #aaa;
+	border-radius: 3px;
+	box-shadow: 0px 0px 3px #ccc, inset 0px 1px 0px #fff;
+	text-align: left;
+	cursor: move;
+	background: #fbfbfb; /* Old browsers */
+	background: -moz-linear-gradient(top,  #fbfbfb 0%, #f9f9f9 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fbfbfb), color-stop(100%,#f9f9f9)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #fbfbfb 0%,#f9f9f9 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #fbfbfb 0%,#f9f9f9 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #fbfbfb 0%,#f9f9f9 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #fbfbfb 0%,#f9f9f9 100%); /* W3C */
+}
+
+#textTitle
+{
+	/* 97% in 6 */
+	width:92%;
+	height: 90px;
+	margin-bottom:5px;
+	border:1px solid #ccc;
+	border-bottom:1px solid #aaa;
+	border-right:1px solid #aaa;
+	border-radius: 3px;
+	box-shadow: 0px 0px 3px #ccc, inset 0px 1px 0px #fff;
+}
+#textTitle:active,
+#textTitle:focus{
+	box-shadow:0px 0px 2px #444;
+}
+
+.card:hover{
+	background:#fff;
+}
+
+#message span, #error span {
+	background:rgba(0,0,0,0.75);
+	color: #fff;
+	padding: 12px;
+	border-radius: 3px;
+}
+
+#error span {
+	background-color: #ff3333;
+	color: #ddd;
+	margin-bottom:0;
+}
+
+#interactions{
+	float:left;
+	width:100%;
+	min-height:40px;
+}
+
+#main{
+	float:left;
+}
+
+#divModal{
+	min-height:400px;
+	padding: 8px;
+}
+
+.cardLeftColumn{
+	width: 350px;
+	padding:4px;
+}
+
+#headTitle{
+	cursor: pointer;
+	font-size:22px;
+	border-bottom:1px solid #ddd;
+}
+#iTitle{
+	width: 332px;
+}
+
+.cardRightColumn{
+	width:100px;
+	padding:4px;
+}
+.cardRightColumn h5{
+	margin-bottom:15px;
+}
+
+.innerArea{
+	padding-bottom: 12px;
+}
+.innerArea a
+{
+	width: 70px;
+	text-align: center;
+}
+
+#textDescription{
+	width:94%;
+	min-height: 50px;
+}
+
+.ui-sortable-helper{
+	opacity:0.70;
+}
+.ui-sortable-placeholder{
+	visibility:visible!important;
+	border:1px dashed #bbb;
+	background: transparent;
+	box-shadow: inset 0px 0px 15px rgba(0,0,0,0.1);
+}
+
+.subActions .dnnPrimaryAction, .subActions .dnnSecondaryAction{
+	min-width:50px;
+	text-align:center;
+}

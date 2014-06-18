@@ -1,0 +1,111 @@
+<dotnetnuke type="Package" version="5.0">
+    <packages>
+        <package name="DotNetNuke.Boards" type="Module" version="01.00.00">
+            <friendlyName>Boards</friendlyName>
+            <description>DotNetNuke Corporation Boards module.</description>
+            <iconFile>~/DesktopModules/DNNCorp/Boards/images/boards.png</iconFile>
+            <owner>
+                <name>DotNetNuke Boards</name>
+                <organization>DotNetNuke Corporation</organization>
+                <url>http://www.dotnetnuke.com</url>
+                <email />
+            </owner>
+            <license src="License.txt"></license>
+            <releaseNotes src="ReleaseNotes.txt"></releaseNotes>
+            <dependencies>
+                <dependency type="CoreVersion">07.00.00</dependency>
+            </dependencies>
+            <components>
+                <component type="Module">
+                    <desktopModule>
+                        <moduleName>Boards</moduleName>
+                        <foldername>DNNCorp/Boards</foldername>
+                        <businessControllerClass>DotNetNuke.Modules.Boards.Components.Controllers.FeatureController</businessControllerClass>
+                        <supportedFeatures>
+                            <supportedFeature type="Upgradable" />
+                        </supportedFeatures>
+                        <moduleDefinitions>
+                            <moduleDefinition>
+                                <friendlyName>Boards</friendlyName>
+                                <defaultCacheTime>0</defaultCacheTime>
+                                <moduleControls>
+                                    <moduleControl>
+                                        <controlKey />
+                                        <controlSrc>DesktopModules/DNNCorp/Boards/Dispatch.ascx</controlSrc>
+                                        <controlTitle />
+                                        <controlType>View</controlType>
+                                        <iconFile />
+                                        <helpUrl />
+                                        <supportsPartialRendering>False</supportsPartialRendering>
+                                        <supportsPopUps>False</supportsPopUps>
+                                    </moduleControl>
+                                    <moduleControl>
+                                        <controlKey>Settings</controlKey>
+                                        <controlSrc>DesktopModules/DNNCorp/Boards/Settings.ascx</controlSrc>
+                                        <controlTitle />
+                                        <controlType>Edit</controlType>
+                                        <iconFile />
+                                        <helpUrl />
+                                        <supportsPartialRendering>True</supportsPartialRendering>
+                                        <supportsPopUps>True</supportsPopUps>
+                                    </moduleControl>
+                                </moduleControls>
+                            </moduleDefinition>
+                        </moduleDefinitions>
+                    </desktopModule>
+                    <eventMessage>
+                        <processorType>DotNetNuke.Entities.Modules.EventMessageProcessor, DotNetNuke</processorType>
+                        <processorCommand>UpgradeModule</processorCommand>
+                        <attributes>
+                            <businessControllerClass>DotNetNuke.Modules.Boards.Components.Controllers.FeatureController</businessControllerClass>
+                            <desktopModuleID>[DESKTOPMODULEID]</desktopModuleID>
+                            <upgradeVersionsList>01.00.00</upgradeVersionsList>
+                        </attributes>
+                    </eventMessage>
+                </component>
+                <component type="Assembly">
+                    <assemblies>
+                        <assembly>
+                            <name>DotNetNuke.Modules.Boards.dll</name>
+                            <sourceFileName>DotNetNuke.Modules.Boards.dll</sourceFileName>
+                            <version>01.00.00</version>
+                        </assembly>
+                    </assemblies>
+                </component>
+                <component type="File">
+                    <files>
+                        <basePath>DesktopModules\DNNCorp\Boards\Documentation</basePath>
+                        <file>
+                            <name>License.txt</name>
+                        </file>
+                        <file>
+                            <name>ReleaseNotes.txt</name>
+                        </file>
+                    </files>
+                </component>
+                <component type="Script">
+                    <scripts>
+                        <basePath>DesktopModules\DNNCorp\Boards\Providers\Data\SqlDataProvider</basePath>
+                        <script type="Install">
+                            <name>01.00.00.SqlDataProvider</name>
+                            <version>01.00.00</version>
+                        </script>
+                        <script type="UnInstall">
+                            <name>Uninstall.SqlDataProvider</name>
+                            <version>01.00.00</version>
+                        </script>
+                    </scripts>
+                </component>
+                <component type="ResourceFile">
+                    <resourceFiles>
+                        <basePath>DesktopModules\DNNCorp\Boards</basePath>
+                        <resourceFile>
+                            <name>Resources.zip</name>
+                            <sourceFileName>Resources.zip</sourceFileName>
+                        </resourceFile>
+                    </resourceFiles>
+                </component>
+            </components>
+        </package>
+    </packages>
+</dotnetnuke>

@@ -1,0 +1,125 @@
+﻿
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}Boards_Board_Create') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}Boards_Board_Create
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}Boards_Board_Get') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}Boards_Board_Get
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}Boards_Board_GetGroup') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}Boards_Board_GetGroup
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}Boards_Board_GetModule') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}Boards_Board_GetModule
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}Boards_Board_GetUser') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}Boards_Board_GetUser
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}Boards_Board_Update') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}Boards_Board_Update
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}Boards_Board_Delete') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}Boards_Board_Delete
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}Boards_Board_List_Create') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}Boards_Board_List_Create
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}Boards_Board_List_Get') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}Boards_Board_List_Get
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}Boards_Board_List_GetBoard') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}Boards_Board_List_GetBoard
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}Boards_Board_List_Update') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}Boards_Board_List_Update
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}Boards_Board_List_Delete') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}Boards_Board_List_Delete
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}Boards_Card_Create') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}Boards_Card_Create
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}Boards_Card_Get') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}Boards_Card_Get
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}Boards_Card_GetBoard') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}Boards_Card_GetBoard
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}Boards_Card_Update') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}Boards_Card_Update
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}Boards_Card_Delete') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}Boards_Card_Delete
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}Boards_Card_Item_Create') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}Boards_Card_Item_Create
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}Boards_Card_Item_Get') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}Boards_Card_Item_Get
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}Boards_Card_Item_GetCard') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}Boards_Card_Item_GetCard
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}Boards_Card_Item_Update') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}Boards_Card_Item_Update
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}Boards_Card_Item_Delete') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}Boards_Card_Item_Delete
+GO
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'FK_{objectQualifier}Boards_Card_Item_{objectQualifier}Boards_Card') and OBJECTPROPERTY(id, N'IsConstraint') = 1)
+	ALTER TABLE {databaseOwner}{objectQualifier}Boards_Card_Item DROP CONSTRAINT FK_{objectQualifier}Boards_Card_Item_{objectQualifier}Boards_Card
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}Boards_Card_Item') and OBJECTPROPERTY(id, N'IsTable') = 1)
+	DROP TABLE {databaseOwner}{objectQualifier}Boards_Card_Item
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'FK_{objectQualifier}Boards_Card_{objectQualifier}Boards_Board_List') and OBJECTPROPERTY(id, N'IsConstraint') = 1)
+	ALTER TABLE {databaseOwner}{objectQualifier}Boards_Card DROP CONSTRAINT FK_{objectQualifier}Boards_Card_{objectQualifier}Boards_Board_List
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}Boards_Card') and OBJECTPROPERTY(id, N'IsTable') = 1)
+	DROP TABLE {databaseOwner}{objectQualifier}Boards_Card
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'FK_{objectQualifier}Boards_Board_List_{objectQualifier}Boards_Board') and OBJECTPROPERTY(id, N'IsConstraint') = 1)
+	ALTER TABLE {databaseOwner}{objectQualifier}Boards_Board_List DROP CONSTRAINT FK_{objectQualifier}Boards_Board_List_{objectQualifier}Boards_Board
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}Boards_Board_List') and OBJECTPROPERTY(id, N'IsTable') = 1)
+	DROP TABLE {databaseOwner}{objectQualifier}Boards_Board_List
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'FK_{objectQualifier}Boards_Board_{objectQualifier}Modules') and OBJECTPROPERTY(id, N'IsConstraint') = 1)
+	ALTER TABLE {databaseOwner}{objectQualifier}Boards_Board DROP CONSTRAINT FK_{objectQualifier}Boards_Board_{objectQualifier}Modules
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'FK_{objectQualifier}Boards_Board_{objectQualifier}Portals') and OBJECTPROPERTY(id, N'IsConstraint') = 1)
+	ALTER TABLE {databaseOwner}{objectQualifier}Boards_Board DROP CONSTRAINT FK_{objectQualifier}Boards_Board_{objectQualifier}Portals
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}Boards_Board') and OBJECTPROPERTY(id, N'IsTable') = 1)
+	DROP TABLE {databaseOwner}{objectQualifier}Boards_Board
+GO
