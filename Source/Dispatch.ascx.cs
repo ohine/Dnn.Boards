@@ -28,6 +28,7 @@ using DotNetNuke.Web.Client.ClientResourceManagement;
 
 namespace DotNetNuke.Modules.Boards
 {
+    using DotNetNuke.UI.Modules;
 
     /// <summary>
     /// This dispatch control determines which user interface to display based on page the module is placed on in addition to some various URL parameters.
@@ -87,15 +88,27 @@ namespace DotNetNuke.Modules.Boards
             try
             {
                 base.OnLoad(e);
+                var pathToControl = TemplateSourceDirectory + ControlToLoad;
 
-                var ctlDirectory = TemplateSourceDirectory;
-                var objControl = LoadControl(ctlDirectory + ControlToLoad) as PortalModuleBase;
-                if (objControl == null) return;
+                var objControl = LoadControl(pathToControl) as PortalModuleBase;
+                if (objControl == null)
+                {
+                    var objUserControl = LoadControl(pathToControl) as ModuleUserControlBase;
 
-                phUserControl.Controls.Clear();
-                objControl.ModuleContext.Configuration = ModuleContext.Configuration;
-                objControl.ID = System.IO.Path.GetFileNameWithoutExtension(ctlDirectory + ControlToLoad);
-                phUserControl.Controls.Add(objControl);
+                    if (objUserControl == null) return;
+
+                    phUserControl.Controls.Clear();
+                    objUserControl.ModuleContext.Configuration = ModuleContext.Configuration;
+                    objUserControl.ID = System.IO.Path.GetFileNameWithoutExtension(pathToControl);
+                    phUserControl.Controls.Add(objUserControl);
+                }
+                else
+                {
+                    phUserControl.Controls.Clear();
+                    objControl.ModuleContext.Configuration = ModuleContext.Configuration;
+                    objControl.ID = System.IO.Path.GetFileNameWithoutExtension(pathToControl);
+                    phUserControl.Controls.Add(objControl);
+                }
 
                 if ((string)ViewState["CtlToLoad"] != ControlToLoad)
                 {
