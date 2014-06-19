@@ -200,7 +200,7 @@
   <PropertyGroup>
     <Extension>zip</Extension>
     <DNNFileName>Boards</DNNFileName>
-    <PackageName>DNNCorp.Boards</PackageName>
+    <PackageName>Dnn.Boards</PackageName>
     <MSBuildCommunityTasksPath>$(MSBuildProjectDirectory)\BuildScripts</MSBuildCommunityTasksPath>
 	<MSBuildDnnBinPath Condition="'$(MSBuildDnnBinPath)' == ''">$(MSBuildProjectDirectory)\bin</MSBuildDnnBinPath>
   </PropertyGroup>
